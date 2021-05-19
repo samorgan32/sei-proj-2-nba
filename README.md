@@ -1,70 +1,43 @@
-# Getting Started with Create React App
+# Description
+The app is an NBA player reference that pulls data from the Ball Don't Lie Api.  Users will be able to search by team or by player, and compare the season averages of at least two players.  
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Component Heirarchy
+- Main Display
+    - Search
+        - Player Comparison
+            -  Player Details
+    - Team Select
+        - PLayer List 
+            - Player Details
 
-## Available Scripts
+# User Stories
+As a user I want to... 
 
-In the project directory, you can run:
+1. access nba stats for all players to use as a reference.
+2. be able to search for individual players so I can find them quickly and easily.
+3. run comparisons of multiple players to see who has better stats.  
+4. Search by team and compare players on team so I can better understand how individual teams stack up. 
+5. access stats by year so I can see progress and compare players form different eras.
+6. select individual stats to display to for more customized player comparisons. 
+7. select individual games to see and compare player statistics for a specific game.   
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
+# MVP
+- pull in statistical data for all nba players from api. ( 1 )
+- search for an individual player and display statistics. ( 1, 2 )
+- display statstics for at least two different players simultaneously. ( 3 )
+- select a team from the dropdown and display only players on that team.  ( 4 )
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+# Stretch goals 
+- compare more than 2 players simultaneously. ( 3 )
+- allow user to specify which stats to display. ( 6 )
+- allow user to select specific games. ( 7 )
+- allow user to compare specific player performance for individual games. ( 7 )
+- provide visual feedback on player comparisons as to which player is better. ( 3 )
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Wireframe
+<img width="659" alt="2-proj-nba wireframe" src="https://media.git.generalassemb.ly/user/35876/files/d796fb00-b82c-11eb-8869-b19c64c22895">
