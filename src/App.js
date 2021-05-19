@@ -4,8 +4,8 @@ import './App.css';
 function App() {
 
   return (
-    <div className="App">
-
+    <div>
+      Hoop Stats
     </div>
   );
 }
