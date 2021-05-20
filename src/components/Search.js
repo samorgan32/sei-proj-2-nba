@@ -5,6 +5,10 @@ const Search = ({ players, setPlayers }) => {
         console.log(event.target.value)
     }
 
+    // const handleSubmit = () => {
+    //     setPlayers()
+    // }
+
     return (
         <div>
             <label htmlFor="search"></label>
