@@ -3,6 +3,8 @@ import data from '../data.json'
 
 
 const Search = ({ players, setPlayers }) => {
+    const [activePlayers, setActivePlayers] = useState([])
+
     const handleChange = (event) => {
         // console.log(event.target.value)
         const userInput = event.target.value.toLowerCase()
@@ -18,7 +20,7 @@ const Search = ({ players, setPlayers }) => {
     }
 
     // const handleSubmit = () => {
-    //     setPlayers()
+    //     setActivePlayers(filteredPlayers)
     // }
 
     return (

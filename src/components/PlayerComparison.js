@@ -1,10 +1,11 @@
 import React from 'react';
-import PlayerList from './PlayerList';
+import Player from './Player';
 
-const PlayerComparison = () => {
+const PlayerComparison = ({ players, setPlayers }) => {
     return (
         <div>
-            {/* <PlayerList /> */}
+            <Player players={players} setPlayers={setPlayers} />
+
         </div>
     );
 };
