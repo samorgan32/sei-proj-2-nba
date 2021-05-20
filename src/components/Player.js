@@ -28,6 +28,7 @@ const Player = ({ activePlayers, setActivePlayers }) => {
             }
         </div>
     );
+
 };
 
 export default Player;

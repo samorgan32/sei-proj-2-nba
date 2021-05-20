@@ -16,7 +16,7 @@ function App() {
   return (
     <div>
       <Search players={players} setPlayers={setPlayers} activePlayers={activePlayers} setActivePlayers={setActivePlayers} />
-      <PlayerList players={players} setPlayers={setPlayers} />
+      <PlayerList players={players} setPlayers={setPlayers} activePlayers={activePlayers} setActivePlayers={setActivePlayers} />
       <Route path="/player-comparison/" render={(routerProps) => <PlayerComparison activePlayers={activePlayers} setActivePlayers={setActivePlayers} match={routerProps.match} />} />
     </div>
   );

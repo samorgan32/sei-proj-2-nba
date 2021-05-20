@@ -15,10 +15,10 @@ const PlayerList = ({ players, setPlayers, activePlayers, setActivePlayers }) =>
         console.log(newPlayer)
         let comparedPlayers = players.filter(player => player.player_id == newPlayer)
         console.log(comparedPlayers)
-        playersArray.push(comparedPlayers)
-        console.log(playersArray)
-        setActivePlayers(playersArray)
+        setActivePlayers(comparedPlayers)
     }
+
+    console.log(activePlayers)
 
     return (
 
