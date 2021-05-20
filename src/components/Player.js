@@ -12,7 +12,18 @@ const Player = ({ players, setPlayers }) => {
         <div>
             {
                 players.map((player) => (
-                    <h1>{player.first_name}</h1>
+                    <div>
+                        <div>
+                            <h1>{player.first_name}</h1>
+                        </div>
+                        <div>
+                            <p>{player.pts}</p>
+                            <p>{player.ast}</p>
+                            <p>{player.reb}</p>
+                            <p>{player.stl}</p>
+                            <p>{player.blk}</p>
+                        </div>
+                    </div>
                 ))
             }
         </div>
