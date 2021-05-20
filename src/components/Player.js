@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 
-const Player = ({ players, setPlayers }) => {
+const Player = ({ activePlayers, setActivePlayers }) => {
 
-    if (!players) {
-        return <p>loading
+    if (!activePlayers) {
+        return <p>select players to compare
         </p>
     }
 
@@ -11,17 +11,17 @@ const Player = ({ players, setPlayers }) => {
 
         <div>
             {
-                players.map((player) => (
+                activePlayers.map((activePlayer) => (
                     <div>
                         <div>
-                            <h1>{player.first_name} {player.last_name}</h1>
+                            <h1>{activePlayer.first_name} {activePlayer.last_name}</h1>
                         </div>
                         <div>
-                            <p>{player.pts}</p>
-                            <p>{player.ast}</p>
-                            <p>{player.reb}</p>
-                            <p>{player.stl}</p>
-                            <p>{player.blk}</p>
+                            <p>{activePlayer.pts}</p>
+                            <p>{activePlayer.ast}</p>
+                            <p>{activePlayer.reb}</p>
+                            <p>{activePlayer.stl}</p>
+                            <p>{activePlayer.blk}</p>
                         </div>
                     </div>
                 ))
