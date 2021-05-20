@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 import Player from './Player';
 
 const PlayerList = ({ players, setPlayers }) => {
@@ -13,9 +14,11 @@ const PlayerList = ({ players, setPlayers }) => {
             {
                 players.map((player) => (
                     <div>
-                        <div>
-                            <h2>{player.first_name} {player.last_name} <span style={{ fontSize: "large", fontWeight: "300" }} >({player.team.abbreviation})</span></h2>
-                        </div>
+                        <Link to="/player-comparison/" >
+                            <div>
+                                <h2>{player.first_name} {player.last_name} <span style={{ fontSize: "large", fontWeight: "300" }} >({player.team.abbreviation})</span></h2>
+                            </div>
+                        </Link>
                     </div>
                 ))
             }

@@ -27,7 +27,7 @@ const Search = ({ players, setPlayers }) => {
         <div>
             <label htmlFor="search"></label>
             <input type="Search" placeholder="search for a player" onChange={handleChange} />
-            <button>Search</button>
+            {/* <button>Search</button> */}
         </div>
     );
 };

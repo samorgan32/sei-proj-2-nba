@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Route } from 'react-router-dom'
 import Search from './components/Search'
 import PlayerComparison from './components/PlayerComparison'
 import PlayerList from './components/PlayerList';
@@ -15,6 +16,7 @@ function App() {
     <div>
       <Search players={players} setPlayers={setPlayers} />
       <PlayerList players={players} setPlayers={setPlayers} />
+      <Route path="/player-comparison/" render={(routerProps) => <PlayerComparison players={players} setPlayers={setPlayers} match={routerProps.match} />} />
     </div>
   );
 }
