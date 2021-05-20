@@ -14,8 +14,7 @@ const PlayerList = ({ players, setPlayers }) => {
                 players.map((player) => (
                     <div>
                         <div>
-                            <h2>{player.first_name} {player.last_name}:</h2>
-                            <p>{player.team.abbreviation}</p>
+                            <h2>{player.first_name} {player.last_name} <span style={{ fontSize: "large", fontWeight: "300" }} >({player.team.abbreviation})</span></h2>
                         </div>
                     </div>
                 ))
