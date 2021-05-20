@@ -13,7 +13,7 @@ function App() {
 
   return (
     <div>
-      <Search />
+      <Search players={players} setPlayers={setPlayers} />
       <PlayerList players={players} setPlayers={setPlayers} />
     </div>
   );

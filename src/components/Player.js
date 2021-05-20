@@ -14,7 +14,7 @@ const Player = ({ players, setPlayers }) => {
                 players.map((player) => (
                     <div>
                         <div>
-                            <h1>{player.first_name}</h1>
+                            <h1>{player.first_name} {player.last_name}</h1>
                         </div>
                         <div>
                             <p>{player.pts}</p>

@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const Search = () => {
+const Search = ({ players, setPlayers }) => {
+    const handleSearch = (event) => {
+        console.log(event.target.value)
+    }
+
     return (
         <div>
             <label htmlFor="search"></label>
-            <input type="Search" placeholder="search for a player" />
+            <input type="Search" placeholder="search for a player" onChange={handleSearch} />
             <button>Search</button>
         </div>
     );
