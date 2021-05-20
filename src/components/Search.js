@@ -8,7 +8,7 @@ const Search = ({ players, setPlayers }) => {
         const userInput = event.target.value.toLowerCase()
         // console.log(userInput)
         const filteredPlayers = players.filter((player) => {
-            return player.first_name.toLowerCase().includes(userInput)
+            return (player.first_name.toLowerCase().includes(userInput) || player.last_name.toLowerCase().includes(userInput))
         })
         setPlayers(filteredPlayers)
         if (!userInput) {
