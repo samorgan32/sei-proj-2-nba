@@ -19,9 +19,7 @@ const Search = ({ players, setPlayers }) => {
 
     }
 
-    // const handleSubmit = () => {
-    //     setActivePlayers(filteredPlayers)
-    // }
+
 
     return (
         <div>

@@ -11,11 +11,11 @@ import './App.css';
 function App() {
 
   const [players, setPlayers] = useState(data.data)
-  const [activePlayers, setActivePlayers] = useState([])
+  const [activePlayers, setActivePlayers] = useState(null)
 
   return (
     <div>
-      <Search players={players} setPlayers={setPlayers} />
+      <Search players={players} setPlayers={setPlayers} activePlayers={activePlayers} setActivePlayers={setActivePlayers} />
       <PlayerList players={players} setPlayers={setPlayers} />
       <Route path="/player-comparison/" render={(routerProps) => <PlayerComparison activePlayers={activePlayers} setActivePlayers={setActivePlayers} match={routerProps.match} />} />
     </div>
