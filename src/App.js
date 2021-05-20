@@ -1,11 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
+import Search from './components/Search'
+import PlayerComparison from './components/PlayerComparison'
+import PlayerList from './components/PlayerList';
+import data from './data.json'
 import './App.css';
+
+
 
 function App() {
 
-  return (
-    <div className="App">
+  const [players, setPlayers] = useState(data.data)
 
+  return (
+    <div>
+      <Search />
+      <PlayerList players={players} setPlayers={setPlayers} />
     </div>
   );
 }
