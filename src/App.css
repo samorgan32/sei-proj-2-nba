@@ -1,5 +1,11 @@
 
 body {
+    display: grid;
+    grid-template-columns: .5fr 1fr;
     background: black;
     color: green;
+}
+
+.player-comparison{
+grid-column-start: 2;
 }

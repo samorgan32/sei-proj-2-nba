@@ -21,17 +21,6 @@ function App() {
 
 
 
-  // useEffect(() => {
-  //   fetch(searchOptions.url)
-  //     .then(res => res.json())
-  //     .then(res => {
-  //       console.log(res.data)
-  //       setPlayers(res.data)
-  //     })
-  //     .catch(err => {
-  //       console.error(err)
-  //     })
-  // }, [])
 
   return (
 

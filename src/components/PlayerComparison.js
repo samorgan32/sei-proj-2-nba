@@ -3,7 +3,7 @@ import Player from './Player';
 
 const PlayerComparison = ({ players, setPlayers, activePlayers, setActivePlayers }) => {
     return (
-        <div>
+        <div className='player-comparison'>
             <Player players={players} setPlayers={setPlayers} activePlayers={activePlayers} setActivePlayers={setActivePlayers} />
 
         </div>

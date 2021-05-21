@@ -3,26 +3,36 @@ import { Link } from 'react-router-dom'
 
 
 const PlayerList = ({ players, setPlayers, activePlayers, setActivePlayers }) => {
-
+    if (!players) {
+        return <p>loading
+    </p>
+    }
 
     const handleClick = (event) => {
-        const playersArray = activePlayers
-        let newPlayer = event.target.id
-        players.forEach(player => player.player_id == newPlayer ? playersArray.push(player) : null);
-        let comparedPlayers = [...new Set(playersArray)]
-        setActivePlayers(comparedPlayers)
-    }
-    useEffect(() => {
-        if (!players) {
-            return <p>loading
-        </p>
+        // const playersArray = activePlayers
+        // let newPlayer = event.target.id
+        // players.forEach(player => player.player_id == newPlayer ? playersArray.push(player) : null);
+        // let comparedPlayers = [...new Set(playersArray)]
+        // setActivePlayers(comparedPlayers)
+
+
+        const playerSearchOptions = {
+            url: 'https://www.balldontlie.io/api/v1/season_averages?',
+            playerId: `player_ids[]=${event.target.id}`
         }
-    }, [])
+
+        fetch(`${playerSearchOptions.url}${playerSearchOptions.playerId}`)
+            .then(res => res.json())
+            .then(res => setActivePlayers(res.data))
+    }
+
+    console.log(activePlayers)
+
 
 
     return (
 
-        <div>
+        <div className='player-list'>
             {
                 players.map((player) => (
                     <div>

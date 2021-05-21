@@ -29,7 +29,7 @@ const Search = ({ players, setPlayers }) => {
         fetch(`${searchOptions.url}&search=${searchOptions.search}`)
             .then(res => res.json())
             .then(res => {
-                console.log(res.data)
+                // console.log(res.data)
                 setPlayers(res.data)
             })
             .catch(err => {
@@ -39,22 +39,9 @@ const Search = ({ players, setPlayers }) => {
     }
 
     useEffect(() => {
-        // const searchOptions = {
-        //     search: `${userInput}`,
-        //     url: 'https://www.balldontlie.io/api/v1/players?per_page=100',
-
-        // }
-
-
-        // fetch(`${searchOptions.url}&search=${searchOptions.search}`)
-        //     .then(res => res.json())
-        //     .then(res => {
-        //         console.log(res.data)
-        //         setPlayers(res.data)
-        //     })
-        //     .catch(err => {
-        //         console.error(err)
-        //     })
+        if (!activePlayers) {
+            return <p>search for players</p>
+        }
     }, [])
 
 
@@ -62,7 +49,6 @@ const Search = ({ players, setPlayers }) => {
         <div>
             <label htmlFor="search"></label>
             <input type="Search" placeholder="search for a player" onChange={handleChange} />
-            {/* <button>Search</button> */}
         </div>
     );
 };
