@@ -1,12 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom'
-import Player from './Player';
+
 
 const PlayerList = ({ players, setPlayers, activePlayers, setActivePlayers }) => {
-    if (!players) {
-        return <p>loading
-        </p>
-    }
+
 
     const handleClick = (event) => {
         const playersArray = activePlayers
@@ -15,8 +12,13 @@ const PlayerList = ({ players, setPlayers, activePlayers, setActivePlayers }) =>
         let comparedPlayers = [...new Set(playersArray)]
         setActivePlayers(comparedPlayers)
     }
+    useEffect(() => {
+        if (!players) {
+            return <p>loading
+        </p>
+        }
+    }, [])
 
-    console.log(activePlayers)
 
     return (
 
@@ -33,6 +35,7 @@ const PlayerList = ({ players, setPlayers, activePlayers, setActivePlayers }) =>
                 ))
             }
         </div>
+
     );
 };
 

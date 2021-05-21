@@ -9,17 +9,29 @@ import './App.css';
 
 
 function App() {
-  const playersArray = []
-  const [players, setPlayers] = useState(data.data)
+  const [players, setPlayers] = useState([])
   const [activePlayers, setActivePlayers] = useState([])
+  // const searchOptions = {
+  //   url: 'https://www.balldontlie.io/api/v1/players?per_page=100&search=james'
+  // }
 
   let clearPlayers = () => {
     setActivePlayers([])
   }
 
-  useEffect(() => {
 
-  }, [])
+
+  // useEffect(() => {
+  //   fetch(searchOptions.url)
+  //     .then(res => res.json())
+  //     .then(res => {
+  //       console.log(res.data)
+  //       setPlayers(res.data)
+  //     })
+  //     .catch(err => {
+  //       console.error(err)
+  //     })
+  // }, [])
 
   return (
 

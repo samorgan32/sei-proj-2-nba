@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import data from '../data.json'
 
 
 const Search = ({ players, setPlayers }) => {
     const [activePlayers, setActivePlayers] = useState([])
 
+
     const handleChange = (event) => {
+
         // console.log(event.target.value)
         const userInput = event.target.value.toLowerCase()
         // console.log(userInput)
@@ -14,11 +16,46 @@ const Search = ({ players, setPlayers }) => {
         })
         setPlayers(filteredPlayers)
         if (!userInput) {
-            setPlayers(data.data)
+            setPlayers([])
         }
+
+        const searchOptions = {
+            search: `${userInput}`,
+            url: 'https://www.balldontlie.io/api/v1/players?per_page=100',
+
+        }
+
+
+        fetch(`${searchOptions.url}&search=${searchOptions.search}`)
+            .then(res => res.json())
+            .then(res => {
+                console.log(res.data)
+                setPlayers(res.data)
+            })
+            .catch(err => {
+                console.error(err)
+            })
 
     }
 
+    useEffect(() => {
+        // const searchOptions = {
+        //     search: `${userInput}`,
+        //     url: 'https://www.balldontlie.io/api/v1/players?per_page=100',
+
+        // }
+
+
+        // fetch(`${searchOptions.url}&search=${searchOptions.search}`)
+        //     .then(res => res.json())
+        //     .then(res => {
+        //         console.log(res.data)
+        //         setPlayers(res.data)
+        //     })
+        //     .catch(err => {
+        //         console.error(err)
+        //     })
+    }, [])
 
 
     return (
