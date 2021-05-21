@@ -15,15 +15,20 @@ const PlayerList = ({ players, setPlayers, activePlayers, setActivePlayers }) =>
         // let comparedPlayers = [...new Set(playersArray)]
         // setActivePlayers(comparedPlayers)
 
+        const playersArray = activePlayers
+        let newPlayer = event.target.id
+        players.forEach(player => player.player_id == newPlayer ? playersArray.push(newPlayer) : null);
 
         const playerSearchOptions = {
             url: 'https://www.balldontlie.io/api/v1/season_averages?',
-            playerId: `player_ids[]=${event.target.id}`
+            playerId: `player_ids[]=${newPlayer}`
         }
 
         fetch(`${playerSearchOptions.url}${playerSearchOptions.playerId}`)
             .then(res => res.json())
-            .then(res => setActivePlayers(res.data))
+            .then(res => playersArray.push(res.data[0]))
+
+        setActivePlayers(playersArray)
     }
 
     console.log(activePlayers)
