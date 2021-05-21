@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'
 import Player from './Player';
 
@@ -8,14 +8,17 @@ const PlayerList = ({ players, setPlayers, activePlayers, setActivePlayers }) =>
         </p>
     }
 
-
     const handleClick = (event) => {
-        const playersArray = []
+        const playersArray = activePlayers
         let newPlayer = event.target.id
         console.log(newPlayer)
-        let comparedPlayers = players.filter(player => player.player_id == newPlayer)
-        console.log(comparedPlayers)
-        setActivePlayers(comparedPlayers)
+        // let comparedPlayers = players.filter(player => player.player_id == newPlayer)
+        let comparedPlayers = players.forEach(player => player.player_id == newPlayer ? playersArray.push(player) : null);
+
+
+        console.log(playersArray)
+        // comparedPlayers.push(newPlayer)
+        setActivePlayers(playersArray)
     }
 
     console.log(activePlayers)

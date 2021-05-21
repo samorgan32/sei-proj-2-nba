@@ -9,9 +9,9 @@ import './App.css';
 
 
 function App() {
-
+  const playersArray = []
   const [players, setPlayers] = useState(data.data)
-  const [activePlayers, setActivePlayers] = useState(null)
+  const [activePlayers, setActivePlayers] = useState([])
 
   return (
     <div>

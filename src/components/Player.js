@@ -17,11 +17,11 @@ const Player = ({ activePlayers, setActivePlayers }) => {
                             <h1>{activePlayer.first_name} {activePlayer.last_name}</h1>
                         </div>
                         <div>
-                            <p>{activePlayer.pts}</p>
-                            <p>{activePlayer.ast}</p>
-                            <p>{activePlayer.reb}</p>
-                            <p>{activePlayer.stl}</p>
-                            <p>{activePlayer.blk}</p>
+                            <p>points: {activePlayer.pts}</p>
+                            <p>assists: {activePlayer.ast}</p>
+                            <p>rebounds: {activePlayer.reb}</p>
+                            <p>steals: {activePlayer.stl}</p>
+                            <p>blocks: {activePlayer.blk}</p>
                         </div>
                     </div>
                 ))
