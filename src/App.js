@@ -11,9 +11,7 @@ import './App.css';
 function App() {
   const [players, setPlayers] = useState([])
   const [activePlayers, setActivePlayers] = useState([])
-  // const searchOptions = {
-  //   url: 'https://www.balldontlie.io/api/v1/players?per_page=100&search=james'
-  // }
+
 
   let clearPlayers = () => {
     setActivePlayers([])
@@ -28,7 +26,7 @@ function App() {
       <div>
         <button onClick={clearPlayers}>Clear Players</button>
       </div>
-      <div>
+      <div className='main'>
         <Search players={players} setPlayers={setPlayers} activePlayers={activePlayers} setActivePlayers={setActivePlayers} />
         <PlayerList players={players} setPlayers={setPlayers} activePlayers={activePlayers} setActivePlayers={setActivePlayers} />
         <Route path="/player-comparison/" render={(routerProps) => <PlayerComparison activePlayers={activePlayers} setActivePlayers={setActivePlayers} match={routerProps.match} />} />

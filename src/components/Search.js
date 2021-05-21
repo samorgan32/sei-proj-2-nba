@@ -8,6 +8,7 @@ const Search = ({ players, setPlayers }) => {
 
     const handleChange = (event) => {
 
+
         // console.log(event.target.value)
         const userInput = event.target.value.toLowerCase()
         // console.log(userInput)
@@ -15,9 +16,7 @@ const Search = ({ players, setPlayers }) => {
             return (player.first_name.toLowerCase().includes(userInput) || player.last_name.toLowerCase().includes(userInput))
         })
         setPlayers(filteredPlayers)
-        if (!userInput) {
-            setPlayers([])
-        }
+
 
         const searchOptions = {
             search: `${userInput}`,
@@ -36,12 +35,18 @@ const Search = ({ players, setPlayers }) => {
                 console.error(err)
             })
 
+        if (!userInput) {
+            setPlayers([])
+        }
+
+
     }
 
     useEffect(() => {
         if (!activePlayers) {
             return <p>search for players</p>
         }
+
     }, [])
 
 
