@@ -11,14 +11,9 @@ const PlayerList = ({ players, setPlayers, activePlayers, setActivePlayers }) =>
     const handleClick = (event) => {
         const playersArray = activePlayers
         let newPlayer = event.target.id
-        console.log(newPlayer)
-        // let comparedPlayers = players.filter(player => player.player_id == newPlayer)
-        let comparedPlayers = players.forEach(player => player.player_id == newPlayer ? playersArray.push(player) : null);
-
-
-        console.log(playersArray)
-        // comparedPlayers.push(newPlayer)
-        setActivePlayers(playersArray)
+        players.forEach(player => player.player_id == newPlayer ? playersArray.push(player) : null);
+        let comparedPlayers = [...new Set(playersArray)]
+        setActivePlayers(comparedPlayers)
     }
 
     console.log(activePlayers)
