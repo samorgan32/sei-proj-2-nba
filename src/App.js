@@ -11,6 +11,7 @@ import './App.css';
 function App() {
   const [players, setPlayers] = useState([])
   const [activePlayers, setActivePlayers] = useState([])
+  const [playerNames, setPlayerNames] = useState([])
 
 
   let clearPlayers = () => {
@@ -28,8 +29,8 @@ function App() {
       </div>
       <div className='main'>
         <Search players={players} setPlayers={setPlayers} activePlayers={activePlayers} setActivePlayers={setActivePlayers} />
-        <PlayerList players={players} setPlayers={setPlayers} activePlayers={activePlayers} setActivePlayers={setActivePlayers} />
-        <Route path="/player-comparison/" render={(routerProps) => <PlayerComparison activePlayers={activePlayers} setActivePlayers={setActivePlayers} match={routerProps.match} />} />
+        <PlayerList players={players} setPlayers={setPlayers} activePlayers={activePlayers} setActivePlayers={setActivePlayers} playerNames={playerNames} setPlayerNames={setPlayerNames} />
+        <Route path="/player-comparison/" render={(routerProps) => <PlayerComparison activePlayers={activePlayers} setActivePlayers={setActivePlayers} playerNames={playerNames} setPlayerNames={setPlayerNames} match={routerProps.match} />} />
       </div>
     </div>
 
