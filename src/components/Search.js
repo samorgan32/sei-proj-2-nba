@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import data from '../data.json'
+import PlayerList from './PlayerList'
 
 
 const Search = ({ players, setPlayers }) => {
@@ -8,7 +9,7 @@ const Search = ({ players, setPlayers }) => {
 
     const handleChange = (event) => {
 
-
+        event.preventDefault()
         // console.log(event.target.value)
         const userInput = event.target.value.toLowerCase()
         // console.log(userInput)
@@ -39,21 +40,22 @@ const Search = ({ players, setPlayers }) => {
             setPlayers([])
         }
 
-
     }
 
-    useEffect(() => {
-        if (!activePlayers) {
-            return <p>search for players</p>
-        }
+    // useEffect(() => {
+    //     if (!activePlayers) {
+    //         return <p>search for players</p>
+    //     }
 
-    }, [])
+    // }, [])
 
 
     return (
         <div>
+
             <label htmlFor="search"></label>
             <input type="Search" placeholder="search for a player" onChange={handleChange} />
+
         </div>
     );
 };

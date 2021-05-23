@@ -8,8 +8,8 @@ const PlayerList = ({ players, setPlayers, activePlayers, setActivePlayers, play
     </p>
     }
 
-
     const handleClick = (event) => {
+        event.preventDefault()
         // const playersArray = activePlayers
         // let newPlayer = event.target.id
         // players.forEach(player => player.player_id == newPlayer ? playersArray.push(player) : null);
@@ -35,12 +35,14 @@ const PlayerList = ({ players, setPlayers, activePlayers, setActivePlayers, play
 
         setActivePlayers(playersArray)
         setPlayerNames(playerNamesArray)
-        console.log(playerNamesArray)
+        // setPlayers([])
+        // console.log(playerNamesArray)
+        console.log(playersArray)
 
     }
 
-    console.log(activePlayers)
-    console.log(playerNames)
+    // console.log(activePlayers)
+    // console.log(playerNames)
 
 
     return (
