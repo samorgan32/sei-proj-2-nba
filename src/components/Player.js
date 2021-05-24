@@ -11,9 +11,9 @@ const Player = ({ players, setPlayers, activePlayers, setActivePlayers, playerNa
         return <p>loading</p>
     }
 
-    // let nameOfPlayer = playerNames.map(playerName => (
-    //     <h2>{playerName}</h2>
-    // ))
+    let nameOfPlayer = playerNames.map(playerName => (
+        <h2>{playerName}</h2>
+    ))
 
 
     return (
@@ -21,13 +21,13 @@ const Player = ({ players, setPlayers, activePlayers, setActivePlayers, playerNa
         <div>
 
 
-
+            {/* 
             {
                 activePlayers.map((activePlayer) => (
                     <div>
-                        {/* <div>
+                        <div>
                             {nameOfPlayer}
-                        </div> */}
+                        </div>
                         <div>
                             <p>points: {activePlayer.pts}</p>
                             <p>assists: {activePlayer.ast}</p>
@@ -37,7 +37,7 @@ const Player = ({ players, setPlayers, activePlayers, setActivePlayers, playerNa
                         </div>
                     </div>
                 ))
-            }
+            } */}
         </div>
     );
 

@@ -2,23 +2,24 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom'
 
 
-const PlayerList = ({ players, setPlayers, activePlayers, setActivePlayers, playerNames, setPlayerNames }) => {
+const PlayerList = ({ players, setPlayers, activePlayers, setActivePlayers, playerNames, setPlayerNames, filteredPlayers, setFilteredPlayers }) => {
+
     if (!players) {
         return <p>loading
     </p>
     }
 
     const handleClick = (event) => {
-        event.preventDefault()
         // const playersArray = activePlayers
         // let newPlayer = event.target.id
         // players.forEach(player => player.player_id == newPlayer ? playersArray.push(player) : null);
         // let comparedPlayers = [...new Set(playersArray)]
         // setActivePlayers(comparedPlayers)
+
         const playerNamesArray = playerNames
-        const playersArray = activePlayers
+        // let playersArray = activePlayers
         let newPlayer = event.target.id
-        players.forEach(player => player.player_id == newPlayer ? playersArray.push(newPlayer) : null);
+        // players.forEach(player => player.player_id == newPlayer ? playersArray.push(newPlayer) : null);
 
 
         let name = event.target.innerText
@@ -31,15 +32,57 @@ const PlayerList = ({ players, setPlayers, activePlayers, setActivePlayers, play
 
         fetch(`${playerSearchOptions.url}${playerSearchOptions.playerId}`)
             .then(res => res.json())
-            .then(res => playersArray.push(res.data[0]))
+            .then(res => {
+                console.log(res)
+                // playersArray.push(res.data[0])
+                setActivePlayers([...activePlayers, res.data[0]])
+                setPlayerNames(playerNamesArray)
+            })
 
-        setActivePlayers(playersArray)
-        setPlayerNames(playerNamesArray)
+
         // setPlayers([])
-        // console.log(playerNamesArray)
-        console.log(playersArray)
+        console.log(playerNamesArray)
+        // console.log(playersArray)
 
     }
+
+
+
+
+
+
+    // const handleClick = (event) => {
+    //     // const playersArray = activePlayers
+    //     // let newPlayer = event.target.id
+    //     // players.forEach(player => player.player_id == newPlayer ? playersArray.push(player) : null);
+    //     // let comparedPlayers = [...new Set(playersArray)]
+    //     // setActivePlayers(comparedPlayers)
+
+    //     const playerNamesArray = playerNames
+    //     const playersArray = activePlayers
+    //     let newPlayer = event.target.id
+    //     players.forEach(player => player.player_id == newPlayer ? playersArray.push(newPlayer) : null);
+
+
+    //     let name = event.target.innerText
+    //     playerNamesArray.push(name)
+
+    //     const playerSearchOptions = {
+    //         url: 'https://www.balldontlie.io/api/v1/season_averages?',
+    //         playerId: `player_ids[]=${newPlayer}`
+    //     }
+
+    //     fetch(`${playerSearchOptions.url}${playerSearchOptions.playerId}`)
+    //         .then(res => res.json())
+    //         .then(res => playersArray.push(res.data[0]))
+
+    //     setActivePlayers(playersArray)
+    //     setPlayerNames(playerNamesArray)
+    //     // setPlayers([])
+    //     console.log(playerNamesArray)
+    //     console.log(playersArray)
+
+    // }
 
     // console.log(activePlayers)
     // console.log(playerNames)
@@ -49,7 +92,7 @@ const PlayerList = ({ players, setPlayers, activePlayers, setActivePlayers, play
 
         <div className='player-list'>
             {
-                players.map((player) => (
+                filteredPlayers.map((player) => (
                     <div>
                         <Link to="/player-comparison/" onClick={handleClick}>
                             <div>
