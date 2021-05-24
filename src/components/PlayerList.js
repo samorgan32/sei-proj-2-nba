@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom'
 
 const PlayerList = ({ players, setPlayers, activePlayers, setActivePlayers, playerNames, setPlayerNames, filteredPlayers, setFilteredPlayers }) => {
 
-    if (!players) {
-        return <p>loading
-    </p>
-    }
+    // if (!players) {
+    //     return <p>loading
+    // </p>
+    // }
 
     // const handleClick = (event) => {
     //     // const playersArray = activePlayers
