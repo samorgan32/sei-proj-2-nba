@@ -18,12 +18,14 @@ const Player = ({ players, setPlayers, activePlayers, setActivePlayers, playerNa
             .then(res => res.json())
             .then(res => {
                 setPlayerNames(res)
+                console.log(res)
             })
 
         fetch(`${playerSearchOptions.url}${playerSearchOptions.seasonAverages}${playerSearchOptions.playerId}`)
             .then(res => res.json())
             .then(res => {
                 setActivePlayers(res.data)
+                console.log(res.data)
             })
     }, [match.params.id])
 
@@ -58,10 +60,18 @@ const Player = ({ players, setPlayers, activePlayers, setActivePlayers, playerNa
     return (
 
         <div>
+            {
+                playerNames ?
 
-            <div>
-                <h2>{playerNames.first_name}</h2>
-            </div>
+                    <div>
+                        <h2>{playerNames.first_name} {playerNames.last_name}</h2>
+                        <h3>Team: {playerNames.team.full_name} </h3>
+                        <h3>Position: {playerNames.position}</h3>
+                        <h3>Height: {playerNames.height_feet}'{playerNames.height_inches}</h3>
+                        <h3>Weight: {playerNames.weight_pounds} lbs.</h3>
+                    </div> : <p>loading</p>
+
+            }
 
             {
                 activePlayers.map((activePlayer) => (
