@@ -78,11 +78,17 @@ const Player = ({ players, setPlayers, activePlayers, setActivePlayers, playerNa
                     <div>
 
                         <div>
+                            <p>season: {activePlayer.season}</p>
                             <p>points: {activePlayer.pts}</p>
                             <p>assists: {activePlayer.ast}</p>
                             <p>rebounds: {activePlayer.reb}</p>
                             <p>steals: {activePlayer.stl}</p>
                             <p>blocks: {activePlayer.blk}</p>
+                            <p>minutes/game: {activePlayer.min}</p>
+                            <p>fg%: {parseFloat((activePlayer.fg_pct) * 100).toFixed(2)}% </p>
+                            <p>3pt%: {parseFloat((activePlayer.fg3_pct) * 100).toFixed(2)}% </p>
+                            <p>turnovers: {activePlayer.turnover}</p>
+
                         </div>
                     </div>
                 ))

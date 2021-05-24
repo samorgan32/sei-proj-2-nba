@@ -8,16 +8,10 @@ const Search = ({ players, setPlayers, filteredPlayers, setFilteredPlayers }) =>
 
 
     const handleChange = (event) => {
-
-        event.preventDefault()
         const userInput = event.target.value.toLowerCase()
         setFilteredPlayers(players.filter((player) => {
             return (player.first_name.toLowerCase().includes(userInput) || player.last_name.toLowerCase().includes(userInput))
         }))
-
-        if (!userInput) {
-            setPlayers([])
-        }
 
     }
 
