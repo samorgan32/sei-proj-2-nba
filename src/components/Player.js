@@ -1,7 +1,7 @@
 import React from 'react';
 import PlayerList from './PlayerList';
 
-const Player = ({ players, setPlayers, activePlayers, setActivePlayers, playerNames, setPlayerNames }) => {
+const Player = ({ players, setPlayers, activePlayers, setActivePlayers, playerNames, setPlayerNames, match }) => {
 
     if (!activePlayers) {
         return <p>select players to compare
@@ -21,7 +21,7 @@ const Player = ({ players, setPlayers, activePlayers, setActivePlayers, playerNa
         <div>
 
 
-            {/* 
+
             {
                 activePlayers.map((activePlayer) => (
                     <div>
@@ -37,7 +37,7 @@ const Player = ({ players, setPlayers, activePlayers, setActivePlayers, playerNa
                         </div>
                     </div>
                 ))
-            } */}
+            }
         </div>
     );
 

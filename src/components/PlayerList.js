@@ -104,23 +104,10 @@ const PlayerList = ({ players, setPlayers, activePlayers, setActivePlayers, play
 
     return (
 
-        <div>
+        <div className="player-list">
             {listOfPlayers}
         </div>
 
-        // <div className='player-list'>
-        //     {
-        //         filteredPlayers.map((player) => (
-        //             <div>
-        //                 <Link to={"/player/" + playerID} onClick={handleClick}>
-        //                     <div>
-        //                         <h2 id={player.id} name={player.first_name}>{player.first_name} {player.last_name} <span style={{ fontSize: "large", fontWeight: "300" }} >({player.team.abbreviation})</span></h2>
-        //                     </div>
-        //                 </Link>
-        //             </div>
-        //         ))
-        //     }
-        // </div>
 
     );
 };
