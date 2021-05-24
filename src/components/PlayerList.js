@@ -87,22 +87,40 @@ const PlayerList = ({ players, setPlayers, activePlayers, setActivePlayers, play
     // console.log(activePlayers)
     // console.log(playerNames)
 
+    let listOfPlayers = filteredPlayers.map(player => {
+        const playerID = player.id
+
+        return (
+
+            <div>
+                <Link to={"/player/" + playerID} onClick={handleClick}>
+                    <div>
+                        <h2 id={player.id} name={player.first_name}>{player.first_name} {player.last_name} <span style={{ fontSize: "large", fontWeight: "300" }} >({player.team.abbreviation})</span></h2>
+                    </div>
+                </Link>
+            </div>
+        )
+    })
 
     return (
 
-        <div className='player-list'>
-            {
-                filteredPlayers.map((player) => (
-                    <div>
-                        <Link to="/player-comparison/" onClick={handleClick}>
-                            <div>
-                                <h2 id={player.id} name={player.first_name}>{player.first_name} {player.last_name} <span style={{ fontSize: "large", fontWeight: "300" }} >({player.team.abbreviation})</span></h2>
-                            </div>
-                        </Link>
-                    </div>
-                ))
-            }
+        <div>
+            {listOfPlayers}
         </div>
+
+        // <div className='player-list'>
+        //     {
+        //         filteredPlayers.map((player) => (
+        //             <div>
+        //                 <Link to={"/player/" + playerID} onClick={handleClick}>
+        //                     <div>
+        //                         <h2 id={player.id} name={player.first_name}>{player.first_name} {player.last_name} <span style={{ fontSize: "large", fontWeight: "300" }} >({player.team.abbreviation})</span></h2>
+        //                     </div>
+        //                 </Link>
+        //             </div>
+        //         ))
+        //     }
+        // </div>
 
     );
 };
