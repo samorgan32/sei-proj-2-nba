@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import PlayerList from './PlayerList';
+import playerData from '../playerData.json'
 
 
 const Player = ({ players, setPlayers, activePlayers, setActivePlayers, playerNames, setPlayerNames, filteredPlayers, match }) => {
@@ -10,11 +11,10 @@ const Player = ({ players, setPlayers, activePlayers, setActivePlayers, playerNa
 
     useEffect(() => {
 
-
         fetch(`${playerSearchOptions.url}${playerSearchOptions.playerId}`)
             .then(res => res.json())
             .then(res => {
-                console.log(res)
+                setActivePlayers(res.data)
             })
     }, [match.params.id])
 
