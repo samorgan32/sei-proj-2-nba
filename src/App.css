@@ -9,7 +9,7 @@ body {
 
 .main {
     display: grid;
-    border: 2px solid beige;
+    /* border: 2px solid beige; */
     grid-template-columns: .75fr 1fr 1fr;
     grid-template-rows: 1fr;
 
@@ -17,26 +17,39 @@ body {
 
 .search{
     grid-column-start: 1;
-    grid-row-start: 1 / span 3;
 }
 
 .buttons {
     grid-column-start: 2;
+    grid-column-end: 3;
+
 }
 
 .player-list {
-    border: 2px solid beige;
+    border-top:2px solid chartreuse;
 }
 
 .player {
+    display: flex;
     border: 2px solid beige;
     grid-column-start: 2;
     grid-row-start: 2;
+    max-height: 55vh;
+    min-height: 55vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .player-comparison {
+    display: flex;
     border: 2px solid beige;
     grid-column-start: 3;
     grid-row-start: 2;
+    max-height: 55vh;
+    min-height: 55vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
 }
 

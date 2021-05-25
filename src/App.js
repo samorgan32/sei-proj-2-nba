@@ -30,6 +30,8 @@ function App() {
 
     <div>
 
+      <h1>NBA Players</h1>
+
       <div className='main'>
 
         {/* <div className='buttons'> */}
