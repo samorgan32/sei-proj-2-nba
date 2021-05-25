@@ -29,8 +29,10 @@ function App() {
 
 
     <div>
+      <nav>
+        <h1>1 on 1</h1>
+      </nav>
 
-      <h1>NBA Players</h1>
 
       <div className='main'>
 
