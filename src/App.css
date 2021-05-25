@@ -3,29 +3,40 @@ body {
     background: black;
     color: green;
 }
+* {
+    box-sizing: border-box;
+}
 
 .main {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    border: 2px solid beige;
+    grid-template-columns: .75fr 1fr 1fr;
+    grid-template-rows: 1fr;
+
 }
 
 .search{
     grid-column-start: 1;
+    grid-row-start: 1 / span 3;
 }
 
 .buttons {
-    grid-column-start: 3;
-}
-
-.player-list {
-    grid-column-start:1 ;
-}
-
-.player{
     grid-column-start: 2;
 }
 
-.player-comparison{
+.player-list {
+    border: 2px solid beige;
+}
+
+.player {
+    border: 2px solid beige;
+    grid-column-start: 2;
+    grid-row-start: 2;
+}
+
+.player-comparison {
+    border: 2px solid beige;
     grid-column-start: 3;
+    grid-row-start: 2;
 }
 
