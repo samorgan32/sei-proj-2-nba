@@ -35,7 +35,7 @@ const PlayerComparison = ({ playerCompare, setPlayerCompare }) => {
                     </div>
 
 
-                    : <h3>No stats available for {playerCompare.first_name} {playerCompare.last_name}.  Please select another player.</h3>
+                    : <h3>No stats available for {playerCompare.first_name} {playerCompare.last_name}.</h3>
             }
 
         </div>
