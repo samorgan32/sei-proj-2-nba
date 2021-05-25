@@ -4,7 +4,6 @@ import Search from './components/Search'
 import PlayerComparison from './components/PlayerComparison'
 import PlayerList from './components/PlayerList';
 import Player from './components/Player'
-import data from './data.json'
 import playerData from './playerData.json'
 import './App.css';
 
@@ -16,18 +15,10 @@ function App() {
   const [playerNames, setPlayerNames] = useState([])
   const [filteredPlayers, setFilteredPlayers] = useState([])
   const [playerCompare, setPlayerCompare] = useState(null)
-  const playersArray = []
 
-
-  let clearPlayers = () => {
-    setActivePlayers([])
-  }
 
   let comparePlayer = () => {
     const comparedPlayer = { ...playerNames, ...activePlayers[0] }
-    console.log(comparedPlayer)
-    // playersArray.push(comparedPlayer)
-    // console.log(playersArray)
     setPlayerCompare(comparedPlayer)
   }
 
@@ -39,15 +30,44 @@ function App() {
 
     <div>
 
+      <h1>NBA Players</h1>
+
       <div className='main'>
 
-        <div className='buttons'>
-          <button onClick={comparePlayer}>Compare</button>
+        {/* <div className='buttons'> */}
+        <button className='buttons' onClick={comparePlayer}>Set Player to Compare</button>
+        {/* </div> */}
+
+        <div className='search'>
+          <Search players={players} setPlayers={setPlayers} activePlayers={activePlayers} setActivePlayers={setActivePlayers} filteredPlayers={filteredPlayers} setFilteredPlayers={setFilteredPlayers} />
+
+          <PlayerList players={players} setPlayers={setPlayers} activePlayers={activePlayers} setActivePlayers={setActivePlayers} playerNames={playerNames} setPlayerNames={setPlayerNames} filteredPlayers={filteredPlayers} setFilteredPlayers={setFilteredPlayers} />
         </div>
 
-        <Search players={players} setPlayers={setPlayers} activePlayers={activePlayers} setActivePlayers={setActivePlayers} filteredPlayers={filteredPlayers} setFilteredPlayers={setFilteredPlayers} />
+        <div className='stat-identifiers'>
 
-        <PlayerList players={players} setPlayers={setPlayers} activePlayers={activePlayers} setActivePlayers={setActivePlayers} playerNames={playerNames} setPlayerNames={setPlayerNames} filteredPlayers={filteredPlayers} setFilteredPlayers={setFilteredPlayers} />
+          <div>
+            <h3>Compare</h3>
+            <h3>Position</h3>
+            <h3>Height</h3>
+            <h3>Weight</h3>
+          </div>
+
+          <div>
+            <p>season</p>
+            <p>points</p>
+            <p>assists</p>
+            <p>rebounds</p>
+            <p>steals</p>
+            <p>blocks</p>
+            <p>minutes/game</p>
+            <p>fg%</p>
+            <p>3pt%</p>
+            <p>turnovers</p>
+          </div>
+
+        </div>
+
 
 
         <Route path="/player/:id" render={(routerProps) => <Player players={players} setPlayers={setPlayers} activePlayers={activePlayers} setActivePlayers={setActivePlayers} playerNames={playerNames} setPlayerNames={setPlayerNames} filteredPlayers={filteredPlayers} setFilteredPlayers={setFilteredPlayers} match={routerProps.match} />} />
