@@ -46,27 +46,29 @@ function App() {
         <div className='player-display'>
           <button className='buttons' onClick={comparePlayer}>Set Player to Compare</button>
           <div className='stat-identifiers'>
-
             <div>
-              <h3>Name</h3>
-              <h3>Team</h3>
-              <h3>Position</h3>
-              <h3>Height</h3>
-              <h3>Weight</h3>
+              <div>
+                <h3>Name</h3>
+                <h3>Team</h3>
+                <h3>Position</h3>
+                <h3>Height</h3>
+                <h3>Weight</h3>
+              </div>
+
+              <div>
+                <p>season</p>
+                <p>points</p>
+                <p>assists</p>
+                <p>rebounds</p>
+                <p>steals</p>
+                <p>blocks</p>
+                <p>minutes</p>
+                <p>fg%</p>
+                <p>3pt%</p>
+                <p>turnovers</p>
+              </div>
             </div>
 
-            <div>
-              <p>season</p>
-              <p>points</p>
-              <p>assists</p>
-              <p>rebounds</p>
-              <p>steals</p>
-              <p>blocks</p>
-              <p>minutes</p>
-              <p>fg%</p>
-              <p>3pt%</p>
-              <p>turnovers</p>
-            </div>
 
           </div>
 

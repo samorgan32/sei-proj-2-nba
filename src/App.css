@@ -18,11 +18,14 @@ body {
 
 .search{
     /* border: 2px solid beige; */
+    border-radius: 10px;
     /* padding-left: 10px; */
     /* border-top: 2px solid chartreuse; */
     /* border-right: 2px solid chartreuse; */
     padding-left: 10px;
     padding-right: 10px;
+    max-height: 65vh;
+    
 
 
     grid-column-start: 1;
@@ -33,11 +36,11 @@ body {
     display: grid;
     grid-template-columns: 40% 20% 40%;
     grid-template-rows: 8% 92%;
-    min-height: 65vh;
-    max-height: 65vh;
-    max-width: 60vw;
+    min-height: auto;
+    max-height: auto;
+    /* max-width: 60vw; */
+    max-width: 600px;
     border-radius: 10px;
-
 
 }
 
@@ -52,6 +55,8 @@ button {
     /* border-top: 2px solid chartreuse; */
     /* border: 2px solid beige; */
     /* padding-left: 10px; */
+    max-height: 65vh;
+    overflow-y: scroll;
 
 
 }
@@ -93,5 +98,28 @@ button {
     min-height: 60vh; */
     flex-direction: column;
     justify-content: center;
+}
+
+@media only screen and (max-width: 700px) {
+    .player-display{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        overflow-y: scroll;
+        font-size: small;
+        border: none;
+    }
+
+    .player-list {
+        font-size: small;
+    }
+
+    .player{
+        /* text-align: center; */
+    }
+
+    .player-comparison{
+        /* text-align: center; */
+    }
+
 }
 

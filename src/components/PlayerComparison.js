@@ -9,7 +9,7 @@ const PlayerComparison = ({ playerCompare, setPlayerCompare }) => {
         <div className='player-comparison'>
 
             {
-                playerCompare.position ?
+                playerCompare.height_feet ?
                     <div>
                         <div>
                             <h2>{playerCompare.first_name} {playerCompare.last_name}</h2>

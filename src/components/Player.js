@@ -39,7 +39,7 @@ const Player = ({ activePlayers, setActivePlayers, playerNames, setPlayerNames, 
 
         <div className='player'>
             {
-                playerNames.position ?
+                playerNames.height_feet ?
 
                     <div>
                         <div>
