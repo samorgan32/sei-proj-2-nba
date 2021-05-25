@@ -5,12 +5,13 @@ body {
 }
 * {
     box-sizing: border-box;
+    text-align: center;
 }
 
 .main {
     display: grid;
     /* border: 2px solid beige; */
-    grid-template-columns: .75fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr;
 
 }
@@ -20,8 +21,8 @@ body {
 }
 
 .buttons {
-    grid-column-start: 2;
-    grid-column-end: 3;
+    grid-column-start: 3;
+    grid-column-end: 4;
 
 }
 
@@ -38,18 +39,30 @@ body {
     min-height: 55vh;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
 }
 
-.player-comparison {
+.stat-identifiers{
     display: flex;
-    border: 2px solid beige;
+    /* border: 2px solid beige; */
     grid-column-start: 3;
     grid-row-start: 2;
     max-height: 55vh;
     min-height: 55vh;
     flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px;
+
+}
+
+.player-comparison {
+    display: flex;
+    border: 2px solid beige;
+    grid-column-start: 4;
+    grid-row-start: 2;
+    max-height: 55vh;
+    min-height: 55vh;
+    flex-direction: column;
     justify-content: center;
-    align-items: stretch;
 }
 

@@ -38,34 +38,35 @@ const Player = ({ activePlayers, setActivePlayers, playerNames, setPlayerNames, 
     return (
 
         <div className='player'>
+            <div>
+
+            </div>
 
 
 
             <div>
                 <h2>{playerNames.first_name} {playerNames.last_name}</h2>
                 {/* <h3>Team: {playerNames.team.full_name} </h3> */}
-                <h3>Position: {playerNames.position}</h3>
-                <h3>Height: {playerNames.height_feet}'{playerNames.height_inches}</h3>
-                <h3>Weight: {playerNames.weight_pounds} lbs.</h3>
+                <h3>{playerNames.position}</h3>
+                <h3>{playerNames.height_feet}'{playerNames.height_inches}</h3>
+                <h3>{playerNames.weight_pounds} lbs.</h3>
             </div>
-
-
 
             {
                 activePlayers.map((activePlayer) => (
 
 
                     <div>
-                        <p>season: {activePlayer.season}</p>
-                        <p>points: {activePlayer.pts}</p>
-                        <p>assists: {activePlayer.ast}</p>
-                        <p>rebounds: {activePlayer.reb}</p>
-                        <p>steals: {activePlayer.stl}</p>
-                        <p>blocks: {activePlayer.blk}</p>
-                        <p>minutes/game: {activePlayer.min}</p>
-                        <p>fg%: {parseFloat((activePlayer.fg_pct) * 100).toFixed(2)} </p>
-                        <p>3pt%: {parseFloat((activePlayer.fg3_pct) * 100).toFixed(2)} </p>
-                        <p>turnovers: {activePlayer.turnover}</p>
+                        <p>{activePlayer.season}</p>
+                        <p>{activePlayer.pts}</p>
+                        <p>{activePlayer.ast}</p>
+                        <p>{activePlayer.reb}</p>
+                        <p>{activePlayer.stl}</p>
+                        <p>{activePlayer.blk}</p>
+                        <p>{activePlayer.min}</p>
+                        <p>{parseFloat((activePlayer.fg_pct) * 100).toFixed(2)} </p>
+                        <p>{parseFloat((activePlayer.fg3_pct) * 100).toFixed(2)} </p>
+                        <p>{activePlayer.turnover}</p>
 
                     </div>
 
