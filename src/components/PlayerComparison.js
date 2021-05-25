@@ -6,7 +6,6 @@ const PlayerComparison = ({ players, setPlayers, activePlayers, setActivePlayers
 
     return (
         <div className='player-comparison'>
-            {/* <Player players={players} setPlayers={setPlayers} activePlayers={activePlayers} setActivePlayers={setActivePlayers} playerNames={playerNames} setPlayerNames={setPlayerNames} /> */}
 
         </div>
     );

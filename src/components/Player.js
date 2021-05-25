@@ -18,60 +18,47 @@ const Player = ({ players, setPlayers, activePlayers, setActivePlayers, playerNa
             .then(res => res.json())
             .then(res => {
                 setPlayerNames(res)
-                console.log(res)
+                // console.log(res)
             })
 
         fetch(`${playerSearchOptions.url}${playerSearchOptions.seasonAverages}${playerSearchOptions.playerId}`)
             .then(res => res.json())
             .then(res => {
                 setActivePlayers(res.data)
-                console.log(res.data)
+                // console.log(res.data)
             })
     }, [match.params.id])
 
-    // if (!activePlayers) {
-    //     return <p>select players to compare
-    //     </p>
-    // }
+    if (!activePlayers) {
+        return <p>select players to compare
+        </p>
+    }
     if (!playerNames) {
         return <p>loading</p>
     }
 
-    // if (!filteredPlayers) {
-    //     return <p>loading</p>
-    // }
+    function comparePlayer(event) {
+        console.log(event.target.innerText)
 
-
-    // let nameOfPlayer = playerNames.map(playerName => (
-    //     <h2>{playerName.first_name}</h2>
-    // ))
-
-    // function nameOfPlayer() {
-    //     playerNames.map(playerName => {
-    //         if (player.id === match.params.id) {
-    //             <h2>{player.first_name}</h2>
-    //         }
-    //     })
-    // }
-
+    }
 
 
 
     return (
 
-        <div>
-            {
-                playerNames ?
+        <div className='player'>
 
-                    <div>
-                        <h2>{playerNames.first_name} {playerNames.last_name}</h2>
-                        <h3>Team: {playerNames.team.full_name} </h3>
-                        <h3>Position: {playerNames.position}</h3>
-                        <h3>Height: {playerNames.height_feet}'{playerNames.height_inches}</h3>
-                        <h3>Weight: {playerNames.weight_pounds} lbs.</h3>
-                    </div> : <p>loading</p>
 
-            }
+
+            <div>
+                <h2>{playerNames.first_name} {playerNames.last_name}</h2>
+                {/* <h3>Team: {playerNames.team.full_name} </h3> */}
+                <h3>Position: {playerNames.position}</h3>
+                <h3>Height: {playerNames.height_feet}'{playerNames.height_inches}</h3>
+                <h3>Weight: {playerNames.weight_pounds} lbs.</h3>
+            </div>
+
+
 
             {
                 activePlayers.map((activePlayer) => (

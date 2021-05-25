@@ -15,11 +15,22 @@ function App() {
   const [activePlayers, setActivePlayers] = useState([])
   const [playerNames, setPlayerNames] = useState([])
   const [filteredPlayers, setFilteredPlayers] = useState([])
+  const playersArray = []
 
 
   let clearPlayers = () => {
     setActivePlayers([])
   }
+
+  let comparePlayer = () => {
+    const comparedPlayer = { ...playerNames, ...activePlayers[0] }
+    console.log(comparedPlayer)
+    playersArray.push(comparedPlayer)
+    console.log(playersArray)
+  }
+
+  comparePlayer()
+
 
 
 
