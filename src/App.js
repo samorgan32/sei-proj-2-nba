@@ -62,7 +62,7 @@ function App() {
               <p>rebounds</p>
               <p>steals</p>
               <p>blocks</p>
-              <p>minutes/game</p>
+              <p>minutes</p>
               <p>fg%</p>
               <p>3pt%</p>
               <p>turnovers</p>
