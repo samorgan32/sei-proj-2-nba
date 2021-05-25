@@ -20,6 +20,8 @@ function App() {
   let comparePlayer = () => {
     const comparedPlayer = { ...playerNames, ...activePlayers[0] }
     setPlayerCompare(comparedPlayer)
+    setActivePlayers([])
+    setPlayerNames([])
   }
 
 
