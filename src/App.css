@@ -64,12 +64,14 @@ button {
 
 }
 
-.player-list {
+.player-list a {
     /* border-top: 2px solid chartreuse; */
     /* border: 2px solid beige; */
     /* padding-left: 10px; */
     max-height: 65vh;
     overflow-y: scroll;
+    /* text-decoration: none; */
+    color: beige;
 
 
 }
