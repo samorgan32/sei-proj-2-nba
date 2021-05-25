@@ -7,7 +7,7 @@ The app is an NBA player reference that pulls data from the Ball Don't Lie Api. 
         - Player Comparison
             -  Player Details
     - Team Select
-        - PLayer List 
+        - Player List 
             - Player Details
 
 # User Stories
