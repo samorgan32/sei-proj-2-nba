@@ -16,8 +16,8 @@ const Search = ({ players, setPlayers, filteredPlayers, setFilteredPlayers }) =>
     return (
         <div>
 
-            <label htmlFor="search"></label>
-            <input type="Search" placeholder="search for a player" onChange={handleChange} />
+
+            <input type="Search" placeholder="search nba players" onChange={handleChange} />
 
         </div>
     );

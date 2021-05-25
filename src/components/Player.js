@@ -38,40 +38,55 @@ const Player = ({ activePlayers, setActivePlayers, playerNames, setPlayerNames, 
     return (
 
         <div className='player'>
-            <div>
-
-            </div>
-
-
-
-            <div>
-                <h2>{playerNames.first_name} {playerNames.last_name}</h2>
-                {/* <h3>Team: {playerNames.team.full_name} </h3> */}
-                <h3>{playerNames.position}</h3>
-                <h3>{playerNames.height_feet}'{playerNames.height_inches}</h3>
-                <h3>{playerNames.weight_pounds} lbs.</h3>
-            </div>
-
             {
-                activePlayers.map((activePlayer) => (
+                playerNames.first_name ? <div>
+                    {
+                        playerNames.height_feet ?
+
+                            <div>
+                                <div>
+                                    <h2>{playerNames.first_name} {playerNames.last_name}</h2>
+                                    {playerNames.team && <h3>{playerNames.team.full_name}</h3>}
+                                    <h3>{playerNames.position}</h3>
+                                    <h3>{playerNames.height_feet}'{playerNames.height_inches}</h3>
+                                    <h3>{playerNames.weight_pounds} lbs.</h3>
+                                </div>
+
+                                {
+                                    activePlayers.map((activePlayer) => (
 
 
-                    <div>
-                        <p>{activePlayer.season}</p>
-                        <p>{activePlayer.pts}</p>
-                        <p>{activePlayer.ast}</p>
-                        <p>{activePlayer.reb}</p>
-                        <p>{activePlayer.stl}</p>
-                        <p>{activePlayer.blk}</p>
-                        <p>{activePlayer.min}</p>
-                        <p>{parseFloat((activePlayer.fg_pct) * 100).toFixed(2)} </p>
-                        <p>{parseFloat((activePlayer.fg3_pct) * 100).toFixed(2)} </p>
-                        <p>{activePlayer.turnover}</p>
+                                        <div>
+                                            <p>{activePlayer.season}</p>
+                                            <p>{activePlayer.pts}</p>
+                                            <p>{activePlayer.ast}</p>
+                                            <p>{activePlayer.reb}</p>
+                                            <p>{activePlayer.stl}</p>
+                                            <p>{activePlayer.blk}</p>
+                                            <p>{activePlayer.min}</p>
+                                            <p>{parseFloat((activePlayer.fg_pct) * 100).toFixed(2)} </p>
+                                            <p>{parseFloat((activePlayer.fg3_pct) * 100).toFixed(2)} </p>
+                                            <p>{activePlayer.turnover}</p>
 
-                    </div>
+                                        </div>
 
-                ))
+                                    ))
+                                }
+
+
+                            </div> : <h3 style={{ textAlign: 'center' }}>No stats available for {playerNames.first_name} {playerNames.last_name}</h3>
+
+
+
+
+
+
+                    }
+
+
+                </div> : <h3 style={{ textAlign: 'center' }}>Search for another player</h3>
             }
+
         </div>
     );
 
