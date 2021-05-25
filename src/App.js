@@ -34,9 +34,8 @@ function App() {
 
       <div className='main'>
 
-        {/* <div className='buttons'> */}
-        <button className='buttons' onClick={comparePlayer}>Set Player to Compare</button>
-        {/* </div> */}
+        {/* <button className='buttons' onClick={comparePlayer}>Set Player to Compare</button> */}
+
 
         <div className='search'>
           <Search players={players} setPlayers={setPlayers} activePlayers={activePlayers} setActivePlayers={setActivePlayers} filteredPlayers={filteredPlayers} setFilteredPlayers={setFilteredPlayers} />
@@ -44,10 +43,46 @@ function App() {
           <PlayerList players={players} setPlayers={setPlayers} activePlayers={activePlayers} setActivePlayers={setActivePlayers} playerNames={playerNames} setPlayerNames={setPlayerNames} filteredPlayers={filteredPlayers} setFilteredPlayers={setFilteredPlayers} />
         </div>
 
-        <div className='stat-identifiers'>
+        <div className='player-display'>
+          <button className='buttons' onClick={comparePlayer}>Set Player to Compare</button>
+          <div className='stat-identifiers'>
+
+            <div>
+              <h3>Name</h3>
+              <h3>Team</h3>
+              <h3>Position</h3>
+              <h3>Height</h3>
+              <h3>Weight</h3>
+            </div>
+
+            <div>
+              <p>season</p>
+              <p>points</p>
+              <p>assists</p>
+              <p>rebounds</p>
+              <p>steals</p>
+              <p>blocks</p>
+              <p>minutes/game</p>
+              <p>fg%</p>
+              <p>3pt%</p>
+              <p>turnovers</p>
+            </div>
+
+          </div>
+
+
+
+          <Route path="/player/:id" render={(routerProps) => <Player players={players} setPlayers={setPlayers} activePlayers={activePlayers} setActivePlayers={setActivePlayers} playerNames={playerNames} setPlayerNames={setPlayerNames} filteredPlayers={filteredPlayers} setFilteredPlayers={setFilteredPlayers} match={routerProps.match} />} />
+
+          <PlayerComparison playerCompare={playerCompare} setPlayerCompare={setPlayerCompare} />
+
+        </div>
+
+        {/* <div className='stat-identifiers'>
 
           <div>
-            <h3>Compare</h3>
+            <h3>Name</h3>
+            <h3>Team</h3>
             <h3>Position</h3>
             <h3>Height</h3>
             <h3>Weight</h3>
@@ -72,12 +107,12 @@ function App() {
 
         <Route path="/player/:id" render={(routerProps) => <Player players={players} setPlayers={setPlayers} activePlayers={activePlayers} setActivePlayers={setActivePlayers} playerNames={playerNames} setPlayerNames={setPlayerNames} filteredPlayers={filteredPlayers} setFilteredPlayers={setFilteredPlayers} match={routerProps.match} />} />
 
-        <PlayerComparison playerCompare={playerCompare} setPlayerCompare={setPlayerCompare} />
+        <PlayerComparison playerCompare={playerCompare} setPlayerCompare={setPlayerCompare} /> */}
 
         <Redirect path="/" />
       </div>
 
-    
+
     </div>
 
   );
