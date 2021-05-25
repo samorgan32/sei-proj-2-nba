@@ -4,7 +4,6 @@ import Search from './components/Search'
 import PlayerComparison from './components/PlayerComparison'
 import PlayerList from './components/PlayerList';
 import Player from './components/Player'
-import data from './data.json'
 import playerData from './playerData.json'
 import './App.css';
 
@@ -16,18 +15,11 @@ function App() {
   const [playerNames, setPlayerNames] = useState([])
   const [filteredPlayers, setFilteredPlayers] = useState([])
   const [playerCompare, setPlayerCompare] = useState(null)
-  const playersArray = []
 
-
-  let clearPlayers = () => {
-    setActivePlayers([])
-  }
 
   let comparePlayer = () => {
     const comparedPlayer = { ...playerNames, ...activePlayers[0] }
     console.log(comparedPlayer)
-    // playersArray.push(comparedPlayer)
-    // console.log(playersArray)
     setPlayerCompare(comparedPlayer)
   }
 

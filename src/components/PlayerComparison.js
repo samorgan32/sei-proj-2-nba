@@ -1,7 +1,6 @@
 import React from 'react';
-import Player from './Player';
 
-const PlayerComparison = ({ players, setPlayers, activePlayers, setActivePlayers, playerNames, setPlayerNames, playerCompare, seetePlayerCompare }) => {
+const PlayerComparison = ({ playerCompare, setPlayerCompare }) => {
     if (!playerCompare) {
         return <p>select players to compare</p>
     }
@@ -23,8 +22,8 @@ const PlayerComparison = ({ players, setPlayers, activePlayers, setActivePlayers
                 <p>steals: {playerCompare.stl}</p>
                 <p>blocks: {playerCompare.blk}</p>
                 <p>minutes/game: {playerCompare.min}</p>
-                <p>fg%: {parseFloat((playerCompare.fg_pct) * 100).toFixed(2)}% </p>
-                <p>3pt%: {parseFloat((playerCompare.fg3_pct) * 100).toFixed(2)}% </p>
+                <p>fg%: {parseFloat((playerCompare.fg_pct) * 100).toFixed(2)} </p>
+                <p>3pt%: {parseFloat((playerCompare.fg3_pct) * 100).toFixed(2)} </p>
                 <p>turnovers: {playerCompare.turnover}</p>
 
             </div>

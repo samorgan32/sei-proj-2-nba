@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom'
 
 
-const PlayerList = ({ players, setPlayers, activePlayers, setActivePlayers, playerNames, setPlayerNames, filteredPlayers, setFilteredPlayers }) => {
+const PlayerList = ({ filteredPlayers, setFilteredPlayers }) => {
 
 
     let listOfPlayers = filteredPlayers.map(player => {
