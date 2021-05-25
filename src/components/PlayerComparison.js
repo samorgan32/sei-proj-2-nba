@@ -9,7 +9,8 @@ const PlayerComparison = ({ playerCompare, setPlayerCompare }) => {
         <div className='player-comparison'>
             <div>
                 <h2>{playerCompare.first_name} {playerCompare.last_name}</h2>
-                {/* <h3>Team: {playerNames.team.full_name} </h3> */}
+
+                {playerCompare.team && <h3>{playerCompare.team.full_name} </h3>}
                 <h3>{playerCompare.position}</h3>
                 <h3>{playerCompare.height_feet}'{playerCompare.height_inches}</h3>
                 <h3>{playerCompare.weight_pounds} lbs.</h3>

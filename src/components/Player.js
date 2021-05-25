@@ -46,7 +46,7 @@ const Player = ({ activePlayers, setActivePlayers, playerNames, setPlayerNames, 
 
             <div>
                 <h2>{playerNames.first_name} {playerNames.last_name}</h2>
-                {/* <h3>Team: {playerNames.team.full_name} </h3> */}
+                {playerNames.team && <h3>{playerNames.team.full_name}</h3>}
                 <h3>{playerNames.position}</h3>
                 <h3>{playerNames.height_feet}'{playerNames.height_inches}</h3>
                 <h3>{playerNames.weight_pounds} lbs.</h3>
