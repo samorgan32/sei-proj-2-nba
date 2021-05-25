@@ -37,13 +37,13 @@ function App() {
   return (
 
     <div>
-      <div>
-        <button onClick={clearPlayers}>Clear Players</button>
-      </div>
-      <div>
-        <button onClick={comparePlayer}>Compare</button>
-      </div>
+
       <div className='main'>
+
+        <div className='buttons'>
+          <button onClick={comparePlayer}>Compare</button>
+        </div>
+
         <Search players={players} setPlayers={setPlayers} activePlayers={activePlayers} setActivePlayers={setActivePlayers} filteredPlayers={filteredPlayers} setFilteredPlayers={setFilteredPlayers} />
 
         <PlayerList players={players} setPlayers={setPlayers} activePlayers={activePlayers} setActivePlayers={setActivePlayers} playerNames={playerNames} setPlayerNames={setPlayerNames} filteredPlayers={filteredPlayers} setFilteredPlayers={setFilteredPlayers} />

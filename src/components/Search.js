@@ -13,11 +13,13 @@ const Search = ({ players, setPlayers, filteredPlayers, setFilteredPlayers }) =>
             return (player.first_name.toLowerCase().includes(userInput) || player.last_name.toLowerCase().includes(userInput))
         }))
 
+
+
     }
 
 
     return (
-        <div>
+        <div className='search'>
 
             <label htmlFor="search"></label>
             <input type="Search" placeholder="search for a player" onChange={handleChange} />

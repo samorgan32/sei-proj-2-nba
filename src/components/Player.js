@@ -37,12 +37,6 @@ const Player = ({ players, setPlayers, activePlayers, setActivePlayers, playerNa
         return <p>loading</p>
     }
 
-    function comparePlayer(event) {
-        console.log(event.target.innerText)
-
-    }
-
-
 
     return (
 

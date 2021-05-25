@@ -6,7 +6,15 @@ body {
 
 .main {
     display: grid;
-    grid-template-columns: .5fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.search{
+    grid-column-start: 1;
+}
+
+.buttons {
+    grid-column-start: 3;
 }
 
 .player-list {
