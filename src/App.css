@@ -1,1 +1,31 @@
 
+body {
+    background: black;
+    color: green;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.search{
+    grid-column-start: 1;
+}
+
+.buttons {
+    grid-column-start: 3;
+}
+
+.player-list {
+    grid-column-start:1 ;
+}
+
+.player{
+    grid-column-start: 2;
+}
+
+.player-comparison{
+    grid-column-start: 3;
+}
+
