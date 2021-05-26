@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 
 
-const PlayerList = ({ filteredPlayers, setFilteredPlayers }) => {
+const PlayerList = ({ filteredPlayers }) => {
 
 
     let listOfPlayers = filteredPlayers.map(player => {

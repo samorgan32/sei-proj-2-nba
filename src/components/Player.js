@@ -57,16 +57,16 @@ const Player = ({ activePlayers, setActivePlayers, playerNames, setPlayerNames, 
 
 
                                         <div>
-                                            <p>{activePlayer.season}</p>
-                                            <p>{activePlayer.pts}</p>
-                                            <p>{activePlayer.ast}</p>
-                                            <p>{activePlayer.reb}</p>
-                                            <p>{activePlayer.stl}</p>
-                                            <p>{activePlayer.blk}</p>
-                                            <p>{activePlayer.min}</p>
-                                            <p>{parseFloat((activePlayer.fg_pct) * 100).toFixed(2)} </p>
-                                            <p>{parseFloat((activePlayer.fg3_pct) * 100).toFixed(2)} </p>
-                                            <p>{activePlayer.turnover}</p>
+                                            <h3>{activePlayer.season}</h3>
+                                            <h3>{activePlayer.pts}</h3>
+                                            <h3>{activePlayer.ast}</h3>
+                                            <h3>{activePlayer.reb}</h3>
+                                            <h3>{activePlayer.stl}</h3>
+                                            <h3>{activePlayer.blk}</h3>
+                                            <h3>{activePlayer.min}</h3>
+                                            <h3>{parseFloat((activePlayer.fg_pct) * 100).toFixed(2)} </h3>
+                                            <h3>{parseFloat((activePlayer.fg3_pct) * 100).toFixed(2)} </h3>
+                                            <h3>{activePlayer.turnover}</h3>
 
                                         </div>
 

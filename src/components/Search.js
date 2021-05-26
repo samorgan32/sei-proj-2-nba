@@ -2,7 +2,7 @@ import React from 'react';
 
 
 
-const Search = ({ players, setPlayers, filteredPlayers, setFilteredPlayers }) => {
+const Search = ({ players, setFilteredPlayers }) => {
 
 
     const handleChange = (event) => {

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Route, Link, Redirect } from 'react-router-dom'
 import Search from './components/Search'
 import PlayerComparison from './components/PlayerComparison'
@@ -60,16 +60,16 @@ function App() {
               </div>
 
               <div>
-                <p>season</p>
-                <p>points</p>
-                <p>assists</p>
-                <p>rebounds</p>
-                <p>steals</p>
-                <p>blocks</p>
-                <p>minutes</p>
-                <p>fg%</p>
-                <p>3pt%</p>
-                <p>turnovers</p>
+                <h3>Season</h3>
+                <h3>Points</h3>
+                <h3>Assists</h3>
+                <h3>Rebounds</h3>
+                <h3>Steals</h3>
+                <h3>Blocks</h3>
+                <h3>Minutes</h3>
+                <h3>FG%</h3>
+                <h3>3PT%</h3>
+                <h3>Turnovers</h3>
               </div>
             </div>
 

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const PlayerComparison = ({ playerCompare, setPlayerCompare }) => {
+const PlayerComparison = ({ playerCompare }) => {
     if (!playerCompare) {
         return null
     }
@@ -20,16 +20,16 @@ const PlayerComparison = ({ playerCompare, setPlayerCompare }) => {
                             <h3>{playerCompare.weight_pounds} lbs.</h3>
                         </div>
                         <div>
-                            <p>{playerCompare.season}</p>
-                            <p>{playerCompare.pts}</p>
-                            <p>{playerCompare.ast}</p>
-                            <p>{playerCompare.reb}</p>
-                            <p>{playerCompare.stl}</p>
-                            <p>{playerCompare.blk}</p>
-                            <p>{playerCompare.min}</p>
-                            <p>{parseFloat((playerCompare.fg_pct) * 100).toFixed(2)} </p>
-                            <p>{parseFloat((playerCompare.fg3_pct) * 100).toFixed(2)} </p>
-                            <p>{playerCompare.turnover}</p>
+                            <h3>{playerCompare.season}</h3>
+                            <h3>{playerCompare.pts}</h3>
+                            <h3>{playerCompare.ast}</h3>
+                            <h3>{playerCompare.reb}</h3>
+                            <h3>{playerCompare.stl}</h3>
+                            <h3>{playerCompare.blk}</h3>
+                            <h3>{playerCompare.min}</h3>
+                            <h3>{parseFloat((playerCompare.fg_pct) * 100).toFixed(2)} </h3>
+                            <h3>{parseFloat((playerCompare.fg3_pct) * 100).toFixed(2)} </h3>
+                            <h3>{playerCompare.turnover}</h3>
 
                         </div>
                     </div>
