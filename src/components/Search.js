@@ -2,9 +2,9 @@ import React from 'react';
 
 
 
-const Search = ({ players, setPlayers, filteredPlayers, setFilteredPlayers }) => {
+const Search = ({ players, setFilteredPlayers }) => {
 
-
+    //sets the search results on each character input
     const handleChange = (event) => {
         const userInput = event.target.value.toLowerCase()
         setFilteredPlayers(players.filter((player) => {

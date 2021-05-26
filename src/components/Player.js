@@ -3,6 +3,8 @@ import React, { useEffect } from 'react';
 
 
 const Player = ({ activePlayers, setActivePlayers, playerNames, setPlayerNames, match }) => {
+
+    //variables used to construct the url for the fetch request either for players or season averages
     const playerSearchOptions = {
         url: 'https://www.balldontlie.io/api/v1/',
         seasonAverages: 'season_averages?player_ids[]=',
@@ -12,13 +14,13 @@ const Player = ({ activePlayers, setActivePlayers, playerNames, setPlayerNames, 
     }
 
     useEffect(() => {
-
+        //fetches player information such as name, height, etc. 
         fetch(`${playerSearchOptions.url}${playerSearchOptions.players}${playerSearchOptions.playerId}`)
             .then(res => res.json())
             .then(res => {
                 setPlayerNames(res)
             })
-
+        //fetches season averages such as pts, rebs, etc. 
         fetch(`${playerSearchOptions.url}${playerSearchOptions.seasonAverages}${playerSearchOptions.playerId}`)
             .then(res => res.json())
             .then(res => {
@@ -26,13 +28,6 @@ const Player = ({ activePlayers, setActivePlayers, playerNames, setPlayerNames, 
             })
     }, [match.params.id])
 
-    if (!activePlayers) {
-        return <p>select players to compare
-        </p>
-    }
-    if (!playerNames) {
-        return <p>loading</p>
-    }
 
 
     return (
@@ -41,12 +36,12 @@ const Player = ({ activePlayers, setActivePlayers, playerNames, setPlayerNames, 
             {
                 playerNames.first_name ? <div>
                     {
-                        playerNames.height_feet ?
+                        playerNames.position ?
 
                             <div>
                                 <div>
-                                    <h2>{playerNames.first_name} {playerNames.last_name}</h2>
-                                    {playerNames.team && <h3>{playerNames.team.full_name}</h3>}
+                                    <h2 style={{ color: '#ebebeb' }}>{playerNames.first_name} {playerNames.last_name}</h2>
+                                    {playerNames.team && <h3 style={{ color: '#ebebeb' }}>{playerNames.team.full_name}</h3>}
                                     <h3>{playerNames.position}</h3>
                                     <h3>{playerNames.height_feet}'{playerNames.height_inches}</h3>
                                     <h3>{playerNames.weight_pounds} lbs.</h3>
@@ -57,16 +52,16 @@ const Player = ({ activePlayers, setActivePlayers, playerNames, setPlayerNames, 
 
 
                                         <div>
-                                            <p>{activePlayer.season}</p>
-                                            <p>{activePlayer.pts}</p>
-                                            <p>{activePlayer.ast}</p>
-                                            <p>{activePlayer.reb}</p>
-                                            <p>{activePlayer.stl}</p>
-                                            <p>{activePlayer.blk}</p>
-                                            <p>{activePlayer.min}</p>
-                                            <p>{parseFloat((activePlayer.fg_pct) * 100).toFixed(2)} </p>
-                                            <p>{parseFloat((activePlayer.fg3_pct) * 100).toFixed(2)} </p>
-                                            <p>{activePlayer.turnover}</p>
+                                            <h3>{activePlayer.season}</h3>
+                                            <h3>{activePlayer.pts}</h3>
+                                            <h3>{activePlayer.ast}</h3>
+                                            <h3>{activePlayer.reb}</h3>
+                                            <h3>{activePlayer.stl}</h3>
+                                            <h3>{activePlayer.blk}</h3>
+                                            <h3>{activePlayer.min}</h3>
+                                            <h3>{parseFloat((activePlayer.fg_pct) * 100).toFixed(2)} </h3>
+                                            <h3>{parseFloat((activePlayer.fg3_pct) * 100).toFixed(2)} </h3>
+                                            <h3>{activePlayer.turnover}</h3>
 
                                         </div>
 

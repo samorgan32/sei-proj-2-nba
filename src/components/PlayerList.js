@@ -2,9 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 
 
-const PlayerList = ({ filteredPlayers, setFilteredPlayers }) => {
+const PlayerList = ({ filteredPlayers }) => {
 
-
+    //maps the search results returned from search component, and maps that over the playerList
     let listOfPlayers = filteredPlayers.map(player => {
         const playerID = player.id
 
