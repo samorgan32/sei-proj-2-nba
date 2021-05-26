@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { Route, Link, Redirect } from 'react-router-dom'
 import Search from './components/Search'
-import About from './components/About'
 import PlayerComparison from './components/PlayerComparison'
 import PlayerList from './components/PlayerList';
 import Player from './components/Player'
 import playerData from './playerData.json'
 import './App.css';
-import PlayerDisplay from './components/PlayerDisplay'
 
 
 
@@ -37,10 +35,6 @@ function App() {
         <Link to='/'>
           <h1>1 on 1</h1>
         </Link>
-
-        <Link to='/about'>
-          <h4>About</h4>
-        </Link>
       </nav>
 
 
@@ -52,8 +46,6 @@ function App() {
 
           <PlayerList players={players} setPlayers={setPlayers} activePlayers={activePlayers} setActivePlayers={setActivePlayers} playerNames={playerNames} setPlayerNames={setPlayerNames} filteredPlayers={filteredPlayers} setFilteredPlayers={setFilteredPlayers} />
         </div>
-
-        <Route path='/about' exact component={About} />
 
         <div className='player-display'>
           <button className='buttons' onClick={comparePlayer}>Set Player to Compare</button>
