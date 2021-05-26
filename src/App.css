@@ -2,7 +2,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap');
 
-/* (colors #ebebeb, #f5a25d,  #fa7f72, #389393) */
 
 body {
     background: rgb(34, 33, 33);
@@ -16,23 +15,18 @@ body {
 }
 
 nav {
-    display: grid;
-   grid-template-columns: 10% 10% 80%;
    padding-left: 10px;
-
 }
 
 nav a {
     color: #389393;
     text-decoration: none;
-    align-self: flex-end;
 }
 
 .main {
     display: grid;
     border-top: 2px groove #fa7f72;
     grid-template-columns: 25% 75%;
-    grid-template-rows: 1fr;
 
 }
 
@@ -42,10 +36,6 @@ nav a {
     padding-right: 10px;
     max-height: 65vh;
     margin-top: 20px;
-    
-
-
-    grid-column-start: 1;
 }
 
 .player-display {
@@ -96,12 +86,8 @@ button {
 }
 
 .stat-identifiers{
-    display: flex;
     grid-column-start: 2;
     grid-row-start: 2;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     text-align: center;
     color: #fa7f72;
     padding-top: 8px;
@@ -109,11 +95,8 @@ button {
 }
 
 .player-comparison {
-    display: flex;
     grid-column-start: 3;
     grid-row-start: 2;
-    flex-direction: column;
-    justify-content: center;
     max-height: auto;
 }
 
@@ -128,6 +111,10 @@ button {
 
     .player-list {
         font-size: small;
+    }
+
+    nav a {
+    font-size: small;
     }
 
 }

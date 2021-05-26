@@ -1,6 +1,8 @@
 import React from 'react';
 
 const PlayerComparison = ({ playerCompare }) => {
+    //Stores and displays the data pulled from the players and season averages apis on the player
+
     if (!playerCompare) {
         return null
     }
@@ -12,9 +14,9 @@ const PlayerComparison = ({ playerCompare }) => {
                 playerCompare.position ?
                     <div>
                         <div>
-                            <h2>{playerCompare.first_name} {playerCompare.last_name}</h2>
+                            <h2 style={{ color: '#ebebeb' }}>{playerCompare.first_name} {playerCompare.last_name}</h2>
 
-                            {playerCompare.team && <h3>{playerCompare.team.full_name} </h3>}
+                            {playerCompare.team && <h3 style={{ color: '#ebebeb' }}>{playerCompare.team.full_name} </h3>}
                             <h3>{playerCompare.position}</h3>
                             <h3>{playerCompare.height_feet}'{playerCompare.height_inches}</h3>
                             <h3>{playerCompare.weight_pounds} lbs.</h3>

@@ -11,12 +11,18 @@ import './App.css';
 
 function App() {
   const [players, setPlayers] = useState(playerData.data)
+  //pulling player data from json file and setting it for the list of players that is searched through
   const [activePlayers, setActivePlayers] = useState([])
+  //the array used to store the season averages pulled from the stats api and mapped on Player component
   const [playerNames, setPlayerNames] = useState([])
+  //sets the bio info for a specific player from the players api and mapped on player component
   const [filteredPlayers, setFilteredPlayers] = useState([])
+  //used to return the search results on the search component and mapped on the player list component
   const [playerCompare, setPlayerCompare] = useState(null)
+  //used to store the data from the api on Player and make it available while user searches for a second player. 
 
 
+  //sets state for the player compare when a player in the player list is clicked. 
   let comparePlayer = () => {
     const comparedPlayer = { ...playerNames, ...activePlayers[0] }
     setPlayerCompare(comparedPlayer)
@@ -24,7 +30,9 @@ function App() {
     setPlayerNames([])
   }
 
-
+  let clearPlayers = () => {
+    setPlayerCompare(null)
+  }
 
 
   return (
@@ -32,7 +40,7 @@ function App() {
 
     <div>
       <nav>
-        <Link to='/'>
+        <Link to='/' onClick={clearPlayers}>
           <h1>1 on 1</h1>
         </Link>
       </nav>
@@ -42,9 +50,9 @@ function App() {
 
 
         <div className='search'>
-          <Search players={players} setPlayers={setPlayers} activePlayers={activePlayers} setActivePlayers={setActivePlayers} filteredPlayers={filteredPlayers} setFilteredPlayers={setFilteredPlayers} />
+          <Search players={players} setFilteredPlayers={setFilteredPlayers} />
 
-          <PlayerList players={players} setPlayers={setPlayers} activePlayers={activePlayers} setActivePlayers={setActivePlayers} playerNames={playerNames} setPlayerNames={setPlayerNames} filteredPlayers={filteredPlayers} setFilteredPlayers={setFilteredPlayers} />
+          <PlayerList filteredPlayers={filteredPlayers} />
         </div>
 
         <div className='player-display'>
@@ -78,15 +86,14 @@ function App() {
 
 
 
-          <Route path="/player/:id" render={(routerProps) => <Player players={players} setPlayers={setPlayers} activePlayers={activePlayers} setActivePlayers={setActivePlayers} playerNames={playerNames} setPlayerNames={setPlayerNames} filteredPlayers={filteredPlayers} setFilteredPlayers={setFilteredPlayers} match={routerProps.match} />} />
+          <Route path="/player/:id" render={(routerProps) => <Player activePlayers={activePlayers} setActivePlayers={setActivePlayers} playerNames={playerNames} setPlayerNames={setPlayerNames} match={routerProps.match} />} />
 
-          <PlayerComparison playerCompare={playerCompare} setPlayerCompare={setPlayerCompare} />
+          <PlayerComparison playerCompare={playerCompare} />
 
         </div>
-
-        <Redirect path="/" />
       </div>
 
+      <Redirect path='/' />
 
     </div>
 
