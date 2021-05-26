@@ -2,11 +2,11 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
 
-
+/* (colors #ebebeb, #f5a25d,  #fa7f72, #389393) */
 
 body {
-    background: black;
-    color: beige;
+    background: rgb(34, 33, 33);
+    color: #389393;
 }
 
 * {
@@ -16,23 +16,28 @@ body {
 }
 
 nav {
-    margin: 20px;
+    display: grid;
+   grid-template-columns: 10% 10% 80%;
+   padding-left: 10px;
+
+}
+
+nav a {
+    color: #389393;
+    text-decoration: none;
+    align-self: flex-end;
 }
 
 .main {
     display: grid;
-    border-top: 2px groove beige;
+    border-top: 2px groove #fa7f72;
     grid-template-columns: 25% 75%;
     grid-template-rows: 1fr;
 
 }
 
-.search{
-    /* border: 2px solid beige; */
+.search {
     border-radius: 10px;
-    /* padding-left: 10px; */
-    /* border-top: 2px solid chartreuse; */
-    /* border-right: 2px solid chartreuse; */
     padding-left: 10px;
     padding-right: 10px;
     max-height: 65vh;
@@ -44,30 +49,29 @@ nav {
 }
 
 .player-display {
-    border: 2px solid beige;
+    background-color: rgb(34, 33, 33);
+    border: 2px solid #fa7f72;
     display: grid;
     grid-template-columns: 40% 20% 40%;
     grid-template-rows: 8% 92%;
     min-height: auto;
     max-height: auto;
-    /* max-width: 60vw; */
     max-width: 600px;
     border-radius: 10px;
     margin: 20px;
+    align-items: flex-start;
 
 }
 
 button {
-    border: 2px outset beige;
+    border: 2px outset #fa7f72;
+    background-color: #fa7f72;
     grid-column-start: 2;
 
 
 }
 
 .player-list {
-    /* border-top: 2px solid chartreuse; */
-    /* border: 2px solid beige; */
-    /* padding-left: 10px; */
     max-height: 65vh;
     overflow-y: scroll;
     
@@ -76,17 +80,15 @@ button {
 }
 
 .player-list a {
-    color: beige;
+    color: #389393;
 }
 
 
 .player {
     display: flex;
-    /* border: 2px solid beige; */
     grid-column-start: 1;
     grid-row-start: 2;
     max-height: auto;
-    /* min-height: 60vh; */
     flex-direction: column;
     justify-content: center;
     text-align: end;
@@ -94,27 +96,21 @@ button {
 
 .stat-identifiers{
     display: flex;
-    /* border: 2px solid beige; */
     grid-column-start: 2;
     grid-row-start: 2;
-    /* max-height: 60vh;
-    min-height: 60vh; */
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* padding: 10px; */
     text-align: center;
-    color: cornflowerblue;
+    color: #389393;
+    padding-top: 8px;
 
 }
 
 .player-comparison {
     display: flex;
-    /* border: 2px solid beige; */
     grid-column-start: 3;
     grid-row-start: 2;
-    /* max-height: 60vh;
-    min-height: 60vh; */
     flex-direction: column;
     justify-content: center;
     max-height: auto;
